@@ -1,0 +1,19 @@
+{
+    "pluginName": "WP-React-CPT Plugin",
+    "pluginURI": "www.example.com",
+    "pluginAuthor": "John Doe",
+    "pluginVersion": "1.0.0",
+    "postTypeName": "Custom Post",
+    "postTypePluralName": "Custom Posts",
+    "postTypeSlug": "custom-posts",
+    "postTypeRegisteredName": "custom_posts",
+    "postTypeDescription": "Custom Post Description...",
+    "postTypeDTOName": "wordpressData",
+    "fields": [
+        {
+            "todo": true
+        }
+    ],
+    "shortcodeName": "display_custom_posts",
+    "reactEntryPointId": "root"
+}
