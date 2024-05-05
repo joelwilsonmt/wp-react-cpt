@@ -3,17 +3,36 @@
     "pluginURI": "www.example.com",
     "pluginAuthor": "John Doe",
     "pluginVersion": "1.0.0",
-    "postTypeName": "Custom Post",
+    "postTypeSingularName": "Custom Post",
     "postTypePluralName": "Custom Posts",
     "postTypeSlug": "custom-posts",
     "postTypeRegisteredName": "custom_posts",
     "postTypeDescription": "Custom Post Description...",
     "postTypeDTOName": "wordpressData",
-    "fields": [
-        {
-            "todo": true
-        }
-    ],
     "shortcodeName": "display_custom_posts",
-    "reactEntryPointId": "root"
+    "reactEntryPointId": "root",
+    "fieldGroups": [
+        {
+            "key": "field_group_5f3b1b1b1b1b1",
+            "title": "Custom Post Fields",
+            "fields": [
+                {
+                    "key": "field_5f3b1b1b1b1b1",
+                    "label": "Custom Text Field",
+                    "name": "custom_text_field",
+                    "type": "text",
+                    "instructions": "Text Instructions...",
+                    "required": 1
+                },
+                {
+                    "key": "field_5f3b1b1b1b1b2",
+                    "label": "Custom Number Field",
+                    "name": "custom_number_field",
+                    "type": "number",
+                    "instructions": "Number Instructions...",
+                    "required": 1
+                }
+            ]
+        }
+    ]
 }
