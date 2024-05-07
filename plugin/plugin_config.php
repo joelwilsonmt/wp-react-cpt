@@ -14,7 +14,7 @@ $postTypePluralName = $pluginConfig['postTypePluralName'];
 $postTypeSlug = $pluginConfig['postTypeSlug'];
 $postTypeDescription = $pluginConfig['postTypeDescription'];
 $postTypeDTOName = $pluginConfig['postTypeDTOName'];
-$fieldGroups = $pluginConfig['fieldGroups'];  // This is an array
+$fieldGroups = $pluginConfig['fieldGroups'];
 $shortcodeName = $pluginConfig['shortcodeName'];
 $reactEntryPointId = $pluginConfig['reactEntryPointId'];
 ?>

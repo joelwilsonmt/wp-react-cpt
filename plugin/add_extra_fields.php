@@ -2,8 +2,6 @@
 
 cLog("Add extra fields running...");
 
-
-
 function create_acf_field_group($key, $title, array $fields, $postTypeSlug, $menu_order = 0, $description = '') {
     return [
         'key' => $key,
@@ -26,59 +24,31 @@ function create_acf_field_group($key, $title, array $fields, $postTypeSlug, $men
 }
 
 
-$fields = [
-    [
-        'key' => 'field_1',
-        'label' => 'Text Field',
-        'name' => 'text_field',
-        'type' => 'text',
-        'instructions' => 'Enter some text.',
-        'required' => 1,
-    ],
-    [
-        'key' => 'field_2',
-        'label' => 'Number Field',
-        'name' => 'number_field',
-        'type' => 'number',
-        'instructions' => 'Enter a number.',
-        'required' => 0,
-    ],
-    [
-        'key' => 'field_3',
-        'label' => 'Date Picker',
-        'name' => 'date_picker',
-        'type' => 'date_picker',
-        'instructions' => 'Select a date.',
-        'required' => 0,
-        'display_format' => 'd/m/Y',
-        'return_format' => 'd/m/Y',
-    ],
-];
-
-
 
 function create_acf_field_groups() {
   global $postTypeSlug, $fieldGroups;
 
   if( function_exists('acf_add_local_field_group') ):
 
-    cLog("field groups" . $fieldGroups);
-
   // Iterate through each field group definition
   foreach ($fieldGroups as $group) {
 
     $group = create_acf_field_group($group['key'], $group['title'], $group['fields'], $postTypeSlug);
 
+    // TODO: possible redundancy here if multiple groups contain google maps fields
+    // if group contains google maps field, add google maps API key:
+    foreach ($group['fields'] as $field) {
+      if ($field['type'] == 'google_map') {
+        add_filter('acf/fields/google_map/api', function($api) use ($field) {
+          $api['key'] = $field['googleMapsAPIKey'];
+          cLog("Adding Google Maps API key to ACF field group " . $field['googleMapsAPIKey'] . " <- should have value here");
+          return $api;
+        });
+      }
+    }
+
     acf_add_local_field_group($group);
   }
-
-
-
-  // // $field_group = create_acf_field_group('testaabbssdsdkj', 'Test Group', $fields, $postTypeSlug);
-
-  // // acf_add_local_field_group($field_group);
-
-  // cLog("Custom post field added for value => " . $postTypeSlug);
 
   else:
       cLog("Failed to create ACF field groups: ACF is not active.");

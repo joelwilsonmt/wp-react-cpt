@@ -2,29 +2,40 @@
 cLog("adding shortcode");
 // Enqueue JavaScript File
 function display_custom_posts_shortcode() {
-  global $postTypeSingularName, $shortcodeName, $postTypeDTOName, $reactEntryPointId;
+  global $postTypeSlug, $shortcodeName, $postTypeDTOName, $reactEntryPointId;
     // Query the custom posts
-    $query = new WP_Query(array(
-        'post_type' => $postTypeSingularName,
-        'posts_per_page' => -1  // Retrieve all posts; adjust as needed or use a setting
-    ));
+   $args = array(
+        'numberposts' => -1, // Adjust as needed
+        'post_type'   => $postTypeSlug, // Replace with your custom post type
+        'post_status' => 'publish' // Only retrieve published posts
+    );
 
-    // Prepare data for JavaScript
-    $posts = array();
-    while ($query->have_posts()) {
-        $query->the_post();
-        $posts[] = array(
-            'id' => get_the_ID(),
-            'title' => get_the_title(),
-            'content' => get_the_content()
+    $posts = get_posts($args);
+    $prepared_posts = array();
+
+    foreach ($posts as $post) {
+        // Standard post data
+        $post_data = array(
+            'ID' => $post->ID,
+            'title' => get_the_title($post->ID),
+            // Add any other post properties you want to include
         );
+
+        // Retrieve ACF fields for the current post
+        $custom_fields = get_fields($post->ID);
+
+        // Merge standard post data with custom fields
+        $prepared_post = array_merge($post_data, $custom_fields);
+
+        // Append to the prepared posts array
+        $prepared_posts[] = $prepared_post;
     }
 
-    // Enqueue a JavaScript file (if needed for further manipulation)
+    // Enqueue the built React Javascript file
     wp_enqueue_script('custom-post-display', plugins_url('includes/js/main.js', __FILE__), array(), null, true);
 
     // Pass data to JavaScript
-    wp_add_inline_script('custom-post-display', 'window.' . $postTypeDTOName . ' = ' . json_encode($posts) . ';', 'before');
+    wp_add_inline_script('custom-post-display', 'window.' . $postTypeDTOName . ' = ' . json_encode($prepared_posts) . ';', 'before');
 
     return '<div id="' . $reactEntryPointId .'"></div>';
 }
