@@ -35,7 +35,6 @@ function create_acf_field_groups() {
 
     $group = create_acf_field_group($group['key'], $group['title'], $group['fields'], $postTypeSlug);
 
-    // TODO: possible redundancy here if multiple groups contain google maps fields
     // if group contains google maps field, add google maps API key:
     foreach ($group['fields'] as $field) {
       if ($field['type'] == 'google_map') {
@@ -44,6 +43,7 @@ function create_acf_field_groups() {
           cLog("Adding Google Maps API key to ACF field group " . $field['googleMapsAPIKey'] . " <- should have value here");
           return $api;
         });
+        break;
       }
     }
 

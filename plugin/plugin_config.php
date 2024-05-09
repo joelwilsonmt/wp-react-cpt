@@ -1,5 +1,5 @@
 <?php
-cLog("Loading Config ");
+cLog("Loading Config");
 $path = dirname(__FILE__) . '/pluginConfig.json';
 $jsonString = file_get_contents($path);
 $pluginConfig = json_decode($jsonString, true);
