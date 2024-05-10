@@ -3,7 +3,7 @@ $path = dirname(__FILE__) . '/pluginConfig.json';
 $jsonString = file_get_contents($path);
 $pluginConfig = json_decode($jsonString, true);
 
-$post_type = dirname(__FILE__) . '/acf-json-load/custom-post-type.json';
+$post_type = dirname(__FILE__) . '/json/custom-post-type.json';
 $post_type_json = file_get_contents($post_type);
 $post_type_config = json_decode($post_type_json, true);
 

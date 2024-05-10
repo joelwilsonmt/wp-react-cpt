@@ -10,9 +10,6 @@ const fieldGroupJSON = generateFieldGroupJSON(
     getPostTypeName(pluginConfig.postType.postTypeSingularName)
 )
 
-writeJsonToFile('./plugin/acf-json-load/custom-post-type.json', postTypeJSON)
+writeJsonToFile('./plugin/json/custom-post-type.json', postTypeJSON)
 
-writeJsonToFile(
-    './plugin/acf-json-load/custom-post-type-fields.json',
-    fieldGroupJSON
-)
+writeJsonToFile('./plugin/json/custom-post-type-fields.json', fieldGroupJSON)
