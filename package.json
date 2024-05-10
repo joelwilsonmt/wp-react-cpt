@@ -5,7 +5,7 @@
     "type": "module",
     "scripts": {
         "dev": "bunx --bun vite",
-        "build": "tsc && bun vite build && cp ./pluginConfig.json ./plugin && zip -r wp-react-cpt.zip plugin",
+        "build": "tsc && bun vite build && bun ./pluginConfigHelpers/generatePluginJSON.ts && zip -r wp-react-cpt.zip plugin",
         "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
         "preview": "vite preview"
     },
@@ -14,11 +14,13 @@
         "react-dom": "^18.2.0"
     },
     "devDependencies": {
+        "@types/node": "^20.12.11",
         "@types/react": "^18.2.79",
         "@types/react-dom": "^18.2.25",
         "@typescript-eslint/eslint-plugin": "^6.21.0",
         "@typescript-eslint/parser": "^7.7.1",
         "@vitejs/plugin-react": "^4.0.3",
+        "change-case": "^5.4.4",
         "eslint": "^8.57.0",
         "eslint-plugin-react-hooks": "^4.6.0",
         "eslint-plugin-react-refresh": "^0.4.3",
