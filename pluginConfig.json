@@ -3,14 +3,14 @@
     "pluginURI": "www.example.com",
     "pluginAuthor": "John Doe",
     "pluginVersion": "1.0.0",
-    "postTypeSingularName": "Custom Post",
-    "postTypePluralName": "Custom Posts",
-    "postTypeSlug": "custom-posts",
-    "postTypeRegisteredName": "custom_posts",
-    "postTypeDescription": "Custom Post Description...",
     "postTypeDTOName": "wordpressData",
     "shortcodeName": "display_custom_posts",
     "reactEntryPointId": "root",
+    "postType": {
+        "postTypeKey": "custom_post_6f3b1b1b1b1b1",
+        "postTypeSingularName": "My Custom Post",
+        "postTypePluralName": "My Custom Posts"
+    },
     "fieldGroups": [
         {
             "key": "field_group_5f3b1b1b1b1b1",
@@ -99,7 +99,7 @@
                     "name": "custom_image_field",
                     "type": "image",
                     "instructions": "Image Instructions...",
-                    "required": 1,
+                    "required": 0,
                     "return_format": "url",
                     "preview_size": "thumbnail",
                     "library": "all"
@@ -110,7 +110,7 @@
                     "name": "custom_file_field",
                     "type": "file",
                     "instructions": "File Instructions...",
-                    "required": 1,
+                    "required": 0,
                     "return_format": "url",
                     "library": "all"
                 },
@@ -120,7 +120,7 @@
                     "name": "custom_gallery_field",
                     "type": "gallery",
                     "instructions": "Gallery Instructions...",
-                    "required": 1,
+                    "required": 0,
                     "preview_size": "thumbnail",
                     "library": "all"
                 },
@@ -130,7 +130,7 @@
                     "name": "custom_google_map",
                     "type": "google_map",
                     "instructions": "Google Map Instructions...",
-                    "required": 1,
+                    "required": 0,
                     "center_lat": "46.88",
                     "center_lng": "-110.36",
                     "zoom": 6,

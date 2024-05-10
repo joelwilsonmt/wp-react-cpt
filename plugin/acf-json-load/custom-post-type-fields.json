@@ -1,0 +1,252 @@
+{
+  "key": "group_5d82810b",
+  "title": "Custom Post Fields",
+  "fields": [
+    {
+      "key": "field_63be4c34",
+      "label": "Custom Text Field",
+      "name": "custom_text_field",
+      "type": "text",
+      "instructions": "",
+      "required": true,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
+    },
+    {
+      "key": "field_771d875e",
+      "label": "Custom Number Field",
+      "name": "custom_number_field",
+      "type": "number",
+      "instructions": "",
+      "required": true,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
+    },
+    {
+      "key": "field_ea9c853a",
+      "label": "Custom Textarea Field",
+      "name": "custom_textarea_field",
+      "type": "textarea",
+      "instructions": "",
+      "required": true,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
+    },
+    {
+      "key": "field_312b0ae6",
+      "label": "Custom Select Field",
+      "name": "custom_select_field",
+      "type": "select",
+      "instructions": "",
+      "required": true,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "placeholder": "",
+      "prepend": "",
+      "append": "",
+      "choices": {
+        "option1": "Option 1",
+        "option2": "Option 2",
+        "option3": "Option 3"
+      }
+    },
+    {
+      "key": "field_a59876b4",
+      "label": "Custom Checkbox Field",
+      "name": "custom_checkbox_field",
+      "type": "checkbox",
+      "instructions": "",
+      "required": true,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "placeholder": "",
+      "prepend": "",
+      "append": "",
+      "allow_custom": 1,
+      "save_custom": 1,
+      "choices": {
+        "option1": "Option 1",
+        "option2": "Option 2",
+        "option3": "Option 3"
+      }
+    },
+    {
+      "key": "field_bb384866",
+      "label": "Custom Radio Field",
+      "name": "custom_radio_field",
+      "type": "radio",
+      "instructions": "",
+      "required": true,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "placeholder": "",
+      "prepend": "",
+      "append": "",
+      "other_choice": 1,
+      "save_other_choice": 1,
+      "choices": {
+        "option1": "Option 1",
+        "option2": "Option 2",
+        "option3": "Option 3"
+      }
+    },
+    {
+      "key": "field_e6b20d96",
+      "label": "Custom Date Picker",
+      "name": "date_picker",
+      "type": "date_picker",
+      "instructions": "",
+      "required": true,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
+    },
+    {
+      "key": "field_d533ac61",
+      "label": "Custom Image Field",
+      "name": "custom_image_field",
+      "type": "image",
+      "instructions": "",
+      "required": false,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
+    },
+    {
+      "key": "field_ba06ed72",
+      "label": "Custom File Field",
+      "name": "custom_file_field",
+      "type": "file",
+      "instructions": "",
+      "required": false,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
+    },
+    {
+      "key": "field_94e0cc5f",
+      "label": "Custom Gallery Field",
+      "name": "custom_gallery_field",
+      "type": "gallery",
+      "instructions": "",
+      "required": false,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
+    },
+    {
+      "key": "field_240c83e1",
+      "label": "Custom Google Map",
+      "name": "custom_google_map",
+      "type": "google_map",
+      "instructions": "",
+      "required": false,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "post_type",
+        "operator": "==",
+        "value": "my-custom-post-type"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "",
+  "show_in_rest": 0
+}
