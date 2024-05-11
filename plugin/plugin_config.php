@@ -14,7 +14,6 @@ $pluginURI = $pluginConfig['pluginURI'];
 $pluginAuthor = $pluginConfig['pluginAuthor'];
 $pluginVersion = $pluginConfig['pluginVersion'];
 $postTypeDTOName = $pluginConfig['postTypeDTOName'];
-$fieldGroups = $pluginConfig['fieldGroups'];
 $shortcodeName = $pluginConfig['shortcodeName'];
 $reactEntryPointId = $pluginConfig['reactEntryPointId'];
 

@@ -139,5 +139,16 @@
                 }
             ]
         }
-    ]
+    ],
+    "optionsGroup": {
+        "fields": [
+            {
+                "key": "field_5o3b1b1b1b1b11",
+                "label": "Google Maps API Key",
+                "name": "google_maps_api_key",
+                "type": "text",
+                "instructions": "Enter your Google Maps API Key"
+            }
+        ]
+    }
 }

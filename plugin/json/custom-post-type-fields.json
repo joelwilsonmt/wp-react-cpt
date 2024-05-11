@@ -1,9 +1,9 @@
 {
-  "key": "group_aa2e6dbf",
+  "key": "field_group_5f3b1b1b1b1b1",
   "title": "Custom Post Fields",
   "fields": [
     {
-      "key": "field_0509c245",
+      "key": "field_5f3b1b1b1b1b1",
       "label": "Custom Text Field",
       "name": "custom_text_field",
       "type": "text",
@@ -22,7 +22,7 @@
       "append": ""
     },
     {
-      "key": "field_3bfd424f",
+      "key": "field_5f3b1b1b1b1b2",
       "label": "Custom Number Field",
       "name": "custom_number_field",
       "type": "number",
@@ -41,7 +41,7 @@
       "append": ""
     },
     {
-      "key": "field_5909ec2e",
+      "key": "field_5f3b1b1b1b1b6",
       "label": "Custom Textarea Field",
       "name": "custom_textarea_field",
       "type": "textarea",
@@ -60,7 +60,7 @@
       "append": ""
     },
     {
-      "key": "field_da73b613",
+      "key": "field_5f3b1b1b1b1b3",
       "label": "Custom Select Field",
       "name": "custom_select_field",
       "type": "select",
@@ -84,7 +84,7 @@
       }
     },
     {
-      "key": "field_2af51655",
+      "key": "field_5f3b1b1b1b1b4",
       "label": "Custom Checkbox Field",
       "name": "custom_checkbox_field",
       "type": "checkbox",
@@ -110,7 +110,7 @@
       }
     },
     {
-      "key": "field_7b5db596",
+      "key": "field_5f3b1b1b1b1b5",
       "label": "Custom Radio Field",
       "name": "custom_radio_field",
       "type": "radio",
@@ -136,7 +136,7 @@
       }
     },
     {
-      "key": "field_79bbcc4b",
+      "key": "field_5f3b1b1b1b1b7",
       "label": "Custom Date Picker",
       "name": "date_picker",
       "type": "date_picker",
@@ -155,7 +155,7 @@
       "append": ""
     },
     {
-      "key": "field_b968dbb1",
+      "key": "field_5f3b1b1b1b1b8",
       "label": "Custom Image Field",
       "name": "custom_image_field",
       "type": "image",
@@ -174,7 +174,7 @@
       "append": ""
     },
     {
-      "key": "field_9de3ca80",
+      "key": "field_5f3b1b1b1b1b9",
       "label": "Custom File Field",
       "name": "custom_file_field",
       "type": "file",
@@ -193,7 +193,7 @@
       "append": ""
     },
     {
-      "key": "field_0dc21962",
+      "key": "field_5f3b1b1b1b1b10",
       "label": "Custom Gallery Field",
       "name": "custom_gallery_field",
       "type": "gallery",
@@ -212,7 +212,7 @@
       "append": ""
     },
     {
-      "key": "field_2e900c77",
+      "key": "field_5f3b1b1b1b1b11",
       "label": "Custom Google Map",
       "name": "custom_google_map",
       "type": "google_map",
