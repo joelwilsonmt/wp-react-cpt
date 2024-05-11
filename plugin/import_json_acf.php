@@ -18,8 +18,7 @@ function register_cpts_from_json() {
 add_action('init', 'register_cpts_from_json');
 
 
-function my_acf_load_json() {
-    // Assuming your JSON file is located in your theme folder
+function add_custom_fields() {
     $custom_fields = dirname(__FILE__) . '/json/custom-post-type-fields.json';
     $custom_fields_json = file_get_contents($custom_fields);
     $custom_fields_config = json_decode($custom_fields_json, true);
@@ -29,5 +28,5 @@ function my_acf_load_json() {
     }
 }
 
-add_action('acf/init', 'my_acf_load_json');
+add_action('acf/init', 'add_custom_fields');
 ?>

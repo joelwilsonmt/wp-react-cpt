@@ -1,10 +1,10 @@
-type InputField = {
+export type InputField = {
     key: string
     label: string
     name: string
     type: string
     instructions: string
-    required: number
+    required?: number
     choices?: Record<string, string>
     allow_custom?: number
     save_custom?: number
@@ -68,13 +68,13 @@ export const generateFieldGroupJSON = (
     postTypeName: string
 ): OutputFieldGroup => {
     return {
-        key: 'group_' + Math.random().toString(16).slice(2, 10), //group.key ||
+        key: group.key || 'group_' + Math.random().toString(16).slice(2, 10),
         title: group.title,
         fields: group.fields.map((field) => {
             // Start with the mandatory fields
             const transformedField = {
                 key:
-                    // field.key ||
+                    field.key ||
                     'field_' + Math.random().toString(16).slice(2, 10),
                 label: field.label,
                 name: field.name,

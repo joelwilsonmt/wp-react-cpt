@@ -4,6 +4,7 @@ type InputJson = {
     postTypeKey: string
     postTypeSingularName: string
     postTypePluralName: string
+    menuIcon?: string
 }
 
 type OutputJson = {
@@ -58,7 +59,9 @@ export const generatePostTypeJSON = (input: InputJson): OutputJson => {
     const baseLabel = input.postTypeSingularName + ' Type'
 
     return {
-        key: 'post_type_' + Math.random().toString(16).slice(2, 10), //input.postTypeKey || 'post_type_663d8b2f3d99d',
+        key:
+            input.postTypeKey ||
+            'post_type_' + Math.random().toString(16).slice(2, 10), //input.postTypeKey || 'post_type_663d8b2f3d99d',
         title: input.postTypePluralName + ' Types',
         menu_order: 0,
         active: true,
@@ -121,7 +124,7 @@ export const generatePostTypeJSON = (input: InputJson): OutputJson => {
         rest_namespace: 'wp/v2',
         rest_controller_class: 'WP_REST_Posts_Controller',
         menu_position: '',
-        menu_icon: '',
+        menu_icon: input.menuIcon || 'dashicons-clipboard',
         rename_capabilities: false,
         singular_capability_name: 'post',
         plural_capability_name: 'posts',

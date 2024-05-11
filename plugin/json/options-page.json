@@ -1,0 +1,28 @@
+{
+  "key": "my-custom-post-type-options-group",
+  "title": "My Custom Post Options Page",
+  "fields": [
+    {
+      "key": "field_5o3b1b1b1b1b11",
+      "label": "Google Maps API Key",
+      "name": "google_maps_api_key",
+      "type": "text",
+      "instructions": "Enter your Google Maps API Key"
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "options_page",
+        "operator": "==",
+        "value": "my-custom-post-type-options"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": []
+}

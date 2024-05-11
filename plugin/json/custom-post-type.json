@@ -1,5 +1,5 @@
 {
-  "key": "post_type_a47af3c3",
+  "key": "custom_post_6f3b1b1b1b1b1",
   "title": "My Custom Posts Types",
   "menu_order": 0,
   "active": true,
@@ -57,7 +57,7 @@
   "rest_namespace": "wp/v2",
   "rest_controller_class": "WP_REST_Posts_Controller",
   "menu_position": "",
-  "menu_icon": "",
+  "menu_icon": "dashicons-clipboard",
   "rename_capabilities": false,
   "singular_capability_name": "post",
   "plural_capability_name": "posts",
