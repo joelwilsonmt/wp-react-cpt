@@ -1,11 +1,14 @@
 <?php
 
-cLog("Add google maps api key running...");
+function my_acf_google_map_api( $api ){
+    $api_key = get_field('google_maps_api_key', 'option');
 
-add_filter('acf/fields/google_map/api', function($api) {
-  $api['key'] = $googleMapsAPIKey;
-  cLog("Adding Google Maps API key to ACF field group " . $googleMapsAPIKey . " <- should have value here");
-  return $api;
-});
+    if (!empty($api_key)) {
+        $api['key'] = $api_key;
+    }
+    return $api;
+}
+
+add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
 
 ?>

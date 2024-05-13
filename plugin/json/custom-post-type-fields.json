@@ -1,6 +1,6 @@
 {
-  "key": "field_group_5f3b1b1b1b1b1",
-  "title": "Custom Post Fields",
+  "key": "field_group_7f3b1b1b1b1b1",
+  "title": "CPT Fields",
   "fields": [
     {
       "key": "field_5f3b1b1b1b1b1",
@@ -8,7 +8,7 @@
       "name": "custom_text_field",
       "type": "text",
       "instructions": "",
-      "required": true,
+      "required": false,
       "conditional_logic": 0,
       "wrapper": {
         "width": "",
@@ -27,7 +27,7 @@
       "name": "custom_number_field",
       "type": "number",
       "instructions": "",
-      "required": true,
+      "required": false,
       "conditional_logic": 0,
       "wrapper": {
         "width": "",
@@ -46,7 +46,7 @@
       "name": "custom_textarea_field",
       "type": "textarea",
       "instructions": "",
-      "required": true,
+      "required": false,
       "conditional_logic": 0,
       "wrapper": {
         "width": "",
@@ -65,7 +65,7 @@
       "name": "custom_select_field",
       "type": "select",
       "instructions": "",
-      "required": true,
+      "required": false,
       "conditional_logic": 0,
       "wrapper": {
         "width": "",
@@ -89,7 +89,7 @@
       "name": "custom_checkbox_field",
       "type": "checkbox",
       "instructions": "",
-      "required": true,
+      "required": false,
       "conditional_logic": 0,
       "wrapper": {
         "width": "",
@@ -115,7 +115,7 @@
       "name": "custom_radio_field",
       "type": "radio",
       "instructions": "",
-      "required": true,
+      "required": false,
       "conditional_logic": 0,
       "wrapper": {
         "width": "",
@@ -138,10 +138,10 @@
     {
       "key": "field_5f3b1b1b1b1b7",
       "label": "Custom Date Picker",
-      "name": "date_picker",
+      "name": "custom_date_picker",
       "type": "date_picker",
       "instructions": "",
-      "required": true,
+      "required": false,
       "conditional_logic": 0,
       "wrapper": {
         "width": "",
@@ -152,7 +152,9 @@
       "maxlength": "",
       "placeholder": "",
       "prepend": "",
-      "append": ""
+      "append": "",
+      "display_format": "d/m/Y",
+      "return_format": "d/m/Y"
     },
     {
       "key": "field_5f3b1b1b1b1b8",
@@ -171,7 +173,10 @@
       "maxlength": "",
       "placeholder": "",
       "prepend": "",
-      "append": ""
+      "append": "",
+      "return_format": "url",
+      "preview_size": "thumbnail",
+      "library": "all"
     },
     {
       "key": "field_5f3b1b1b1b1b9",
@@ -190,7 +195,9 @@
       "maxlength": "",
       "placeholder": "",
       "prepend": "",
-      "append": ""
+      "append": "",
+      "return_format": "url",
+      "library": "all"
     },
     {
       "key": "field_5f3b1b1b1b1b10",
@@ -209,7 +216,9 @@
       "maxlength": "",
       "placeholder": "",
       "prepend": "",
-      "append": ""
+      "append": "",
+      "preview_size": "thumbnail",
+      "library": "all"
     },
     {
       "key": "field_5f3b1b1b1b1b11",
@@ -228,7 +237,11 @@
       "maxlength": "",
       "placeholder": "",
       "prepend": "",
-      "append": ""
+      "append": "",
+      "center_lat": "46.88",
+      "center_lng": "-110.36",
+      "zoom": 6,
+      "height": 350
     }
   ],
   "location": [
@@ -236,7 +249,7 @@
       {
         "param": "post_type",
         "operator": "==",
-        "value": "my-custom-post-type"
+        "value": "cpt-type"
       }
     ]
   ],

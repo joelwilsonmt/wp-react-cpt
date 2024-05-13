@@ -54,60 +54,60 @@ type OutputJson = {
     enter_title_here: string
 }
 
-export const generatePostTypeJSON = (input: InputJson): OutputJson => {
-    const baseType = getPostTypeName(input.postTypeSingularName)
-    const baseLabel = input.postTypeSingularName + ' Type'
+export const generatePostTypeJSON = (
+    input: InputJson,
+    generateNewPostTypeKey?: boolean
+): OutputJson => {
+    const { postTypeSingularName, postTypePluralName } = input
+    const baseType = getPostTypeName(postTypeSingularName)
 
     return {
-        key:
-            input.postTypeKey ||
-            'post_type_' + Math.random().toString(16).slice(2, 10), //input.postTypeKey || 'post_type_663d8b2f3d99d',
-        title: input.postTypePluralName + ' Types',
+        key: generateNewPostTypeKey
+            ? 'post_type_' + Math.random().toString(16).slice(2, 10)
+            : input.postTypeKey,
+        title: input.postTypePluralName,
         menu_order: 0,
         active: true,
-        post_type: baseType.toLowerCase(),
+        post_type: baseType,
         advanced_configuration: true,
         import_source: '',
         import_date: '',
         labels: {
-            name: input.postTypePluralName + ' Types',
-            singular_name: baseLabel,
-            menu_name: baseLabel,
-            all_items: 'All ' + baseLabel,
-            edit_item: 'Edit ' + baseLabel,
-            view_item: 'View ' + baseLabel,
-            view_items: 'View ' + baseLabel,
-            add_new_item: 'Add New ' + baseLabel,
-            add_new: 'Add New ' + baseLabel,
-            new_item: 'New ' + baseLabel,
-            parent_item_colon: 'Parent ' + baseLabel + ':',
-            search_items: 'Search ' + baseLabel,
-            not_found: 'No ' + baseType.toLowerCase() + ' type found',
-            not_found_in_trash:
-                'No ' + baseType.toLowerCase() + ' type found in Trash',
-            archives: baseLabel + ' Archives',
-            attributes: baseLabel + ' Attributes',
+            name: input.postTypePluralName,
+            singular_name: postTypeSingularName,
+            menu_name: postTypePluralName,
+            all_items: 'All ' + postTypePluralName,
+            edit_item: 'Edit ' + postTypePluralName,
+            view_item: 'View ' + postTypePluralName,
+            view_items: 'View ' + postTypePluralName,
+            add_new_item: 'Add New ' + postTypeSingularName,
+            add_new: 'Add New ' + postTypeSingularName,
+            new_item: 'New ' + postTypeSingularName,
+            parent_item_colon: 'Parent ' + postTypeSingularName + ':',
+            search_items: 'Search ' + postTypePluralName,
+            not_found: 'No ' + postTypePluralName + ' found',
+            not_found_in_trash: 'No ' + postTypePluralName + ' found in Trash',
+            archives: postTypePluralName + ' Archives',
+            attributes: postTypePluralName + ' Attributes',
             featured_image: '',
             set_featured_image: '',
             remove_featured_image: '',
             use_featured_image: '',
-            insert_into_item: 'Insert into ' + baseType.toLowerCase() + ' type',
-            uploaded_to_this_item:
-                'Uploaded to this ' + baseType.toLowerCase() + ' type',
-            filter_items_list:
-                'Filter ' + baseType.toLowerCase() + ' type list',
-            filter_by_date:
-                'Filter ' + baseType.toLowerCase() + ' type by date',
-            items_list_navigation: baseType + ' list navigation',
-            items_list: baseType + ' list',
-            item_published: baseType + ' published.',
-            item_published_privately: baseType + ' published privately.',
-            item_reverted_to_draft: baseType + ' reverted to draft.',
-            item_scheduled: baseType + ' scheduled.',
-            item_updated: baseType + ' updated.',
-            item_link: baseType + ' Link',
-            item_link_description:
-                'A link to a ' + baseType.toLowerCase() + ' type.',
+            insert_into_item: 'Insert into ' + postTypeSingularName,
+            uploaded_to_this_item: 'Uploaded to this ' + postTypeSingularName,
+            filter_items_list: 'Filter ' + postTypePluralName + ' list',
+            filter_by_date: 'Filter ' + postTypePluralName + ' by date',
+            items_list_navigation: postTypePluralName + ' list navigation',
+            items_list: postTypePluralName + ' list',
+            item_published: postTypeSingularName + ' published.',
+            item_published_privately:
+                postTypeSingularName + ' published privately.',
+            item_reverted_to_draft:
+                postTypeSingularName + ' reverted to draft.',
+            item_scheduled: postTypeSingularName + ' scheduled.',
+            item_updated: postTypeSingularName + ' updated.',
+            item_link: postTypeSingularName + ' Link',
+            item_link_description: 'A link to a ' + postTypeSingularName + '.',
         },
         description: '',
         public: true,

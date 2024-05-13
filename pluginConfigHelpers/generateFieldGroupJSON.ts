@@ -1,30 +1,9 @@
-export type InputField = {
-    key: string
-    label: string
-    name: string
-    type: string
-    instructions: string
-    required?: number
-    choices?: Record<string, string>
-    allow_custom?: number
-    save_custom?: number
-    other_choice?: number
-    save_other_choice?: number
-    display_format?: string
-    return_format?: string
-    preview_size?: string
-    library?: string
-    center_lat?: string
-    center_lng?: string
-    zoom?: number
-    height?: number
-    googleMapsAPIKey?: string
-}
+import { type Field, isChoiceField } from './defaultFields'
 
 type InputFieldGroup = {
     key: string
     title: string
-    fields: InputField[]
+    fields: Field[]
 }
 
 type OutputField = {
@@ -34,17 +13,12 @@ type OutputField = {
     type: string
     instructions: string
     required: boolean
-    conditional_logic: number
-    wrapper: {
+    wrapper?: {
         width: string
         class: string
         id: string
     }
-    default_value: string
-    maxlength: string
-    placeholder: string
-    prepend: string
-    append: string
+    placeholder?: string
 }
 
 type OutputFieldGroup = {
@@ -65,51 +39,52 @@ type OutputFieldGroup = {
 
 export const generateFieldGroupJSON = (
     group: InputFieldGroup,
-    postTypeName: string
+    postTypeName: string,
+    generateNewFieldsKeys?: boolean
 ): OutputFieldGroup => {
     return {
-        key: group.key || 'group_' + Math.random().toString(16).slice(2, 10),
+        key: generateNewFieldsKeys
+            ? 'group_' + Math.random().toString(16).slice(2, 10)
+            : group.key,
         title: group.title,
         fields: group.fields.map((field) => {
             // Start with the mandatory fields
             const transformedField = {
-                key:
-                    field.key ||
-                    'field_' + Math.random().toString(16).slice(2, 10),
+                key: generateNewFieldsKeys
+                    ? 'field_' + Math.random().toString(16).slice(2, 10)
+                    : field.key,
+
                 label: field.label,
                 name: field.name,
                 type: field.type,
                 instructions: '',
                 required: field.required === 1,
-                conditional_logic: 0,
-                wrapper: {
-                    width: '',
-                    class: '',
-                    id: '',
-                },
-                default_value: '',
-                maxlength: '',
-                placeholder: '',
-                prepend: '',
-                append: '',
             }
 
             // Conditionally add optional fields if they exist
-            if (field.allow_custom !== undefined) {
+            if (field.allow_custom !== undefined)
                 transformedField['allow_custom'] = field.allow_custom
-            }
-            if (field.save_custom !== undefined) {
+            if (field.save_custom !== undefined)
                 transformedField['save_custom'] = field.save_custom
-            }
-            if (field.other_choice !== undefined) {
+            if (field.other_choice !== undefined)
                 transformedField['other_choice'] = field.other_choice
-            }
-            if (field.save_other_choice !== undefined) {
+            if (field.save_other_choice !== undefined)
                 transformedField['save_other_choice'] = field.save_other_choice
-            }
-            if (field.choices) {
+            if (isChoiceField(field) && field.choices)
                 transformedField['choices'] = field.choices
-            }
+            if (field.display_format)
+                transformedField['display_format'] = field.display_format
+            if (field.return_format)
+                transformedField['return_format'] = field.return_format
+            if (field.preview_size)
+                transformedField['preview_size'] = field.preview_size
+            if (field.library) transformedField['library'] = field.library
+            if (field.center_lat)
+                transformedField['center_lat'] = field.center_lat
+            if (field.center_lng)
+                transformedField['center_lng'] = field.center_lng
+            if (field.zoom) transformedField['zoom'] = field.zoom
+            if (field.height) transformedField['height'] = field.height
 
             return transformedField
         }),
