@@ -1,6 +1,6 @@
 <?php
 
-function register_cpts_from_json() {
+function register_cpt_from_json() {
     $post_type = dirname(__FILE__) . '/json/custom-post-type.json';
     $post_type_json = file_get_contents($post_type);
     $post_type_config = json_decode($post_type_json, true);
@@ -8,6 +8,7 @@ function register_cpts_from_json() {
     // Check if the decoding was successful
     if ($post_type_config) {
         if (isset($post_type_config['post_type'])) {
+            cLog("Registering custom post type: " . $post_type_config['post_type']);
             register_post_type($post_type_config['post_type'], $post_type_config);
         }
     } else {
@@ -15,7 +16,7 @@ function register_cpts_from_json() {
     }
 }
 
-add_action('init', 'register_cpts_from_json');
+add_action('init', 'register_cpt_from_json');
 
 
 function add_custom_fields() {
@@ -24,6 +25,7 @@ function add_custom_fields() {
     $custom_fields_config = json_decode($custom_fields_json, true);
 
     if (!acf_get_field_group($custom_fields_config['key'])) {
+        cLog("Adding field group: " . $custom_fields_config['key']);
         acf_import_field_group($custom_fields_config);
     }
 }

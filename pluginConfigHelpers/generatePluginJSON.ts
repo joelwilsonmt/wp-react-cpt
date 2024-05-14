@@ -4,15 +4,27 @@ import { generateOptionsPageJSON } from './generateOptionsPageJSON'
 import { writeJsonToFile } from './writeJSONToFile'
 import pluginConfig from '../pluginConfig.json'
 import { getPostTypeName } from './getPostTypeName'
+import { createField } from './defaultFields'
 
-const postTypeJSON = generatePostTypeJSON(pluginConfig.postType)
+const postTypeJSON = generatePostTypeJSON(
+    pluginConfig.postType,
+    pluginConfig.generateNewPostTypeKey
+)
 const fieldGroupJSON = generateFieldGroupJSON(
-    pluginConfig.fieldGroups[0],
-    getPostTypeName(pluginConfig.postType.postTypeSingularName)
+    {
+        ...pluginConfig.fieldGroups[0],
+        fields: [
+            ...pluginConfig.fieldGroups[0].fields.map((f) =>
+                createField(f, pluginConfig.generateNewFieldsKeys)
+            ),
+        ],
+    },
+    getPostTypeName(pluginConfig.postType.postTypeSingularName),
+    pluginConfig.generateNewFieldsKeys
 )
 const optionsPageJSON = generateOptionsPageJSON(
     pluginConfig.postType.postTypeSingularName,
-    pluginConfig.optionsGroup
+    pluginConfig.postTypeOptionsGroup
 )
 
 writeJsonToFile('./plugin/json/custom-post-type.json', postTypeJSON)

@@ -1,13 +1,30 @@
 {
-  "key": "my-custom-post-type-options-group",
-  "title": "My Custom Post Options Page",
+  "key": "cpt-type-options-group",
+  "title": "CPT Options Page",
   "fields": [
     {
+      "required": 0,
       "key": "field_5o3b1b1b1b1b11",
-      "label": "Google Maps API Key",
       "name": "google_maps_api_key",
+      "label": "Google Maps API Key",
       "type": "text",
       "instructions": "Enter your Google Maps API Key"
+    },
+    {
+      "key": "field_repeater_options_5f3b1b1b1b1b1",
+      "name": "custom_repeater_field",
+      "sub_fields": [
+        {
+          "key": "sub_field_5os3b1b1b1b1b1",
+          "label": "Custom Text Field",
+          "instructions": "Repeater Text Instructions...",
+          "type": "text"
+        }
+      ],
+      "label": "Custom Repeater Field",
+      "type": "repeater",
+      "instructions": "Custom Repeater Instructions...",
+      "button_label": "Add Text Field"
     }
   ],
   "location": [
@@ -15,7 +32,7 @@
       {
         "param": "options_page",
         "operator": "==",
-        "value": "my-custom-post-type-options"
+        "value": "cpt-type-options"
       }
     ]
   ],

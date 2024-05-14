@@ -1,6 +1,6 @@
 {
-  "key": "field_group_5f3b1b1b1b1b1",
-  "title": "Custom Post Fields",
+  "key": "field_group_7f3b1b1b1b1b1",
+  "title": "CPT Fields",
   "fields": [
     {
       "key": "field_5f3b1b1b1b1b1",
@@ -8,18 +8,7 @@
       "name": "custom_text_field",
       "type": "text",
       "instructions": "",
-      "required": true,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "default_value": "",
-      "maxlength": "",
-      "placeholder": "",
-      "prepend": "",
-      "append": ""
+      "required": false
     },
     {
       "key": "field_5f3b1b1b1b1b2",
@@ -27,18 +16,7 @@
       "name": "custom_number_field",
       "type": "number",
       "instructions": "",
-      "required": true,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "default_value": "",
-      "maxlength": "",
-      "placeholder": "",
-      "prepend": "",
-      "append": ""
+      "required": false
     },
     {
       "key": "field_5f3b1b1b1b1b6",
@@ -46,18 +24,7 @@
       "name": "custom_textarea_field",
       "type": "textarea",
       "instructions": "",
-      "required": true,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "default_value": "",
-      "maxlength": "",
-      "placeholder": "",
-      "prepend": "",
-      "append": ""
+      "required": false
     },
     {
       "key": "field_5f3b1b1b1b1b3",
@@ -65,18 +32,7 @@
       "name": "custom_select_field",
       "type": "select",
       "instructions": "",
-      "required": true,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "default_value": "",
-      "maxlength": "",
-      "placeholder": "",
-      "prepend": "",
-      "append": "",
+      "required": false,
       "choices": {
         "option1": "Option 1",
         "option2": "Option 2",
@@ -89,18 +45,7 @@
       "name": "custom_checkbox_field",
       "type": "checkbox",
       "instructions": "",
-      "required": true,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "default_value": "",
-      "maxlength": "",
-      "placeholder": "",
-      "prepend": "",
-      "append": "",
+      "required": false,
       "allow_custom": 1,
       "save_custom": 1,
       "choices": {
@@ -115,18 +60,7 @@
       "name": "custom_radio_field",
       "type": "radio",
       "instructions": "",
-      "required": true,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "default_value": "",
-      "maxlength": "",
-      "placeholder": "",
-      "prepend": "",
-      "append": "",
+      "required": false,
       "other_choice": 1,
       "save_other_choice": 1,
       "choices": {
@@ -138,21 +72,12 @@
     {
       "key": "field_5f3b1b1b1b1b7",
       "label": "Custom Date Picker",
-      "name": "date_picker",
+      "name": "custom_date_picker",
       "type": "date_picker",
       "instructions": "",
-      "required": true,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "default_value": "",
-      "maxlength": "",
-      "placeholder": "",
-      "prepend": "",
-      "append": ""
+      "required": false,
+      "display_format": "d/m/Y",
+      "return_format": "d/m/Y"
     },
     {
       "key": "field_5f3b1b1b1b1b8",
@@ -161,17 +86,9 @@
       "type": "image",
       "instructions": "",
       "required": false,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "default_value": "",
-      "maxlength": "",
-      "placeholder": "",
-      "prepend": "",
-      "append": ""
+      "return_format": "url",
+      "preview_size": "thumbnail",
+      "library": "all"
     },
     {
       "key": "field_5f3b1b1b1b1b9",
@@ -180,17 +97,8 @@
       "type": "file",
       "instructions": "",
       "required": false,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "default_value": "",
-      "maxlength": "",
-      "placeholder": "",
-      "prepend": "",
-      "append": ""
+      "return_format": "url",
+      "library": "all"
     },
     {
       "key": "field_5f3b1b1b1b1b10",
@@ -199,17 +107,8 @@
       "type": "gallery",
       "instructions": "",
       "required": false,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "default_value": "",
-      "maxlength": "",
-      "placeholder": "",
-      "prepend": "",
-      "append": ""
+      "preview_size": "thumbnail",
+      "library": "all"
     },
     {
       "key": "field_5f3b1b1b1b1b11",
@@ -218,17 +117,10 @@
       "type": "google_map",
       "instructions": "",
       "required": false,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "default_value": "",
-      "maxlength": "",
-      "placeholder": "",
-      "prepend": "",
-      "append": ""
+      "center_lat": "46.88",
+      "center_lng": "-110.36",
+      "zoom": 6,
+      "height": 350
     }
   ],
   "location": [
@@ -236,7 +128,7 @@
       {
         "param": "post_type",
         "operator": "==",
-        "value": "my-custom-post-type"
+        "value": "cpt-type"
       }
     ]
   ],
