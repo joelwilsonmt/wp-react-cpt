@@ -102,36 +102,27 @@
             ]
         }
     ],
-    "optionsGroup": {
+    "postTypeOptionsGroup": {
         "fields": [
             {
                 "key": "field_5o3b1b1b1b1b11",
                 "label": "Google Maps API Key",
-                "name": "google_maps_api_key",
                 "type": "text",
-                "instructions": "Enter your Google Maps API Key",
-                "show_in_DTO": 0
+                "instructions": "Enter your Google Maps API Key"
             },
             {
                 "key": "field_repeater_options_5f3b1b1b1b1b1",
                 "label": "Custom Repeater Field",
-                "name": "custom_repeater_field",
                 "type": "repeater",
-                "instructions": "Add new text fields as needed.",
-                "required": 1,
+                "instructions": "Custom Repeater Instructions...",
                 "sub_fields": [
                     {
-                        "key": "field_5f3b1b1b1b1b1",
+                        "key": "sub_field_5os3b1b1b1b1b1",
                         "label": "Custom Text Field",
-                        "name": "custom_text_field",
-                        "type": "text",
-                        "instructions": "Text Instructions...",
-                        "required": 1
+                        "instructions": "Repeater Text Instructions...",
+                        "type": "text"
                     }
                 ],
-                "min": "",
-                "max": "",
-                "layout": "block",
                 "button_label": "Add Text Field"
             }
         ]

@@ -1,14 +1,14 @@
-import { type InputField } from './generateFieldGroupJSON'
+import { type Field, type SimpleField, createField } from './defaultFields'
 import { getPostTypeName } from './getPostTypeName'
 
 type OptionsGroup = {
-    fields: InputField[]
+    fields: SimpleField[]
 }
 
 type ACFGroup = {
     key: string
     title: string
-    fields: InputField[]
+    fields: Field[]
     location: Array<Array<{ param: string; operator: string; value: string }>>
     menu_order: number
     position: string
@@ -26,7 +26,7 @@ export const generateOptionsPageJSON = (
     return {
         key: `${slug}-options-group`,
         title: `${postTypeName} Options Page`,
-        fields: optionsGroup.fields,
+        fields: optionsGroup.fields.map((f) => createField(f)),
         location: [
             [
                 {

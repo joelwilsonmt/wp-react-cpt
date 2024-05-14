@@ -12,6 +12,7 @@ export enum InputType {
     File = 'file',
     Gallery = 'gallery',
     GoogleMap = 'google_map',
+    Repeater = 'repeater',
 }
 
 type InputBase = {
@@ -42,6 +43,11 @@ type NonChoiceField = InputBase & {
     >
 }
 
+type RepeaterField = InputBase & {
+    type: InputType.Repeater
+    sub_fields: NonChoiceField | ChoiceField
+}
+
 export type ChoiceField = InputBase & {
     type: InputType.Radio | InputType.Checkbox | InputType.Select
     choices: string[] | Record<string, string>
@@ -55,7 +61,7 @@ export function isChoiceField(field: Field): field is ChoiceField {
     )
 }
 
-export type Field = NonChoiceField | ChoiceField
+export type Field = RepeaterField | NonChoiceField | ChoiceField
 
 const text = {
     required: 0,
@@ -135,26 +141,49 @@ const fields = {
     google_map,
 }
 
-type SimpleField = {
+export type SimpleField = {
     label: string
-    type: InputType
+    type: InputType | string
     instructions: string
     required?: number
     key?: string
+    sub_fields?: SimpleField[]
 }
 
-const createFieldBase = (baseField: SimpleField) => {
+const createFieldBase = (
+    baseField: SimpleField,
+    generateNewFieldsKeys?: boolean
+) => {
     const snakeCaseLabel = changeCase.snakeCase(baseField.label)
+    if (baseField.sub_fields) {
+        return {
+            key: generateNewFieldsKeys
+                ? 'field_' + Math.random().toString(16).slice(2, 10)
+                : baseField.key
+                  ? baseField.key
+                  : 'field_' + Math.random().toString(16).slice(2, 10),
+            name: snakeCaseLabel,
+            sub_fields: baseField.sub_fields.map((f) => createField(f)),
+            ...baseField,
+        }
+    }
     return {
-        key: baseField.key || Math.random().toString(36).substring(7),
+        key: generateNewFieldsKeys
+            ? 'field_' + Math.random().toString(16).slice(2, 10)
+            : baseField.key
+              ? baseField.key
+              : 'field_' + Math.random().toString(16).slice(2, 10),
         name: snakeCaseLabel,
         ...baseField,
     }
 }
 
-export const createField = (baseField: SimpleField): Field => {
+export const createField = (
+    baseField: SimpleField,
+    generateNewFieldsKeys?: boolean
+): Field => {
     return {
         ...fields[baseField.type],
-        ...createFieldBase(baseField),
+        ...createFieldBase(baseField, generateNewFieldsKeys),
     }
 }

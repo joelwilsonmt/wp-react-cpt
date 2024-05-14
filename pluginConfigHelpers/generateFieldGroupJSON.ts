@@ -50,10 +50,7 @@ export const generateFieldGroupJSON = (
         fields: group.fields.map((field) => {
             // Start with the mandatory fields
             const transformedField = {
-                key: generateNewFieldsKeys
-                    ? 'field_' + Math.random().toString(16).slice(2, 10)
-                    : field.key,
-
+                key: field.key,
                 label: field.label,
                 name: field.name,
                 type: field.type,
