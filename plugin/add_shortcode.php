@@ -29,7 +29,7 @@ function display_custom_posts_shortcode() {
                     $field_object = get_field_object($field_key, $post->ID);
                     if ($field_object) {
                         // Use the field name from the field object as the key
-                        $custom_fields_with_names[$field_object['label']] = $field_object;
+                        $custom_fields_with_names[$field_object['name']] = $field_object;
                     }
                 }
             }
@@ -41,10 +41,6 @@ function display_custom_posts_shortcode() {
     }
 
     $options_data = get_fields('options');
-
-    $options_fields = dirname(__FILE__) . '/json/options-page.json';
-    $options_fields_contents = file_get_contents($options_fields);
-    $options_fields_json = json_decode($options_fields_contents , true);
 
     if ($options_data) {
         // Optionally, process options data if needed or just add to output directly

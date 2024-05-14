@@ -8,18 +8,7 @@
       "name": "custom_text_field",
       "type": "text",
       "instructions": "",
-      "required": false,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "default_value": "",
-      "maxlength": "",
-      "placeholder": "",
-      "prepend": "",
-      "append": ""
+      "required": false
     },
     {
       "key": "field_5f3b1b1b1b1b2",
@@ -27,18 +16,7 @@
       "name": "custom_number_field",
       "type": "number",
       "instructions": "",
-      "required": false,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "default_value": "",
-      "maxlength": "",
-      "placeholder": "",
-      "prepend": "",
-      "append": ""
+      "required": false
     },
     {
       "key": "field_5f3b1b1b1b1b6",
@@ -46,18 +24,7 @@
       "name": "custom_textarea_field",
       "type": "textarea",
       "instructions": "",
-      "required": false,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "default_value": "",
-      "maxlength": "",
-      "placeholder": "",
-      "prepend": "",
-      "append": ""
+      "required": false
     },
     {
       "key": "field_5f3b1b1b1b1b3",
@@ -66,17 +33,6 @@
       "type": "select",
       "instructions": "",
       "required": false,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "default_value": "",
-      "maxlength": "",
-      "placeholder": "",
-      "prepend": "",
-      "append": "",
       "choices": {
         "option1": "Option 1",
         "option2": "Option 2",
@@ -90,17 +46,6 @@
       "type": "checkbox",
       "instructions": "",
       "required": false,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "default_value": "",
-      "maxlength": "",
-      "placeholder": "",
-      "prepend": "",
-      "append": "",
       "allow_custom": 1,
       "save_custom": 1,
       "choices": {
@@ -116,17 +61,6 @@
       "type": "radio",
       "instructions": "",
       "required": false,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "default_value": "",
-      "maxlength": "",
-      "placeholder": "",
-      "prepend": "",
-      "append": "",
       "other_choice": 1,
       "save_other_choice": 1,
       "choices": {
@@ -142,17 +76,6 @@
       "type": "date_picker",
       "instructions": "",
       "required": false,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "default_value": "",
-      "maxlength": "",
-      "placeholder": "",
-      "prepend": "",
-      "append": "",
       "display_format": "d/m/Y",
       "return_format": "d/m/Y"
     },
@@ -163,17 +86,6 @@
       "type": "image",
       "instructions": "",
       "required": false,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "default_value": "",
-      "maxlength": "",
-      "placeholder": "",
-      "prepend": "",
-      "append": "",
       "return_format": "url",
       "preview_size": "thumbnail",
       "library": "all"
@@ -185,17 +97,6 @@
       "type": "file",
       "instructions": "",
       "required": false,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "default_value": "",
-      "maxlength": "",
-      "placeholder": "",
-      "prepend": "",
-      "append": "",
       "return_format": "url",
       "library": "all"
     },
@@ -206,17 +107,6 @@
       "type": "gallery",
       "instructions": "",
       "required": false,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "default_value": "",
-      "maxlength": "",
-      "placeholder": "",
-      "prepend": "",
-      "append": "",
       "preview_size": "thumbnail",
       "library": "all"
     },
@@ -227,17 +117,6 @@
       "type": "google_map",
       "instructions": "",
       "required": false,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "default_value": "",
-      "maxlength": "",
-      "placeholder": "",
-      "prepend": "",
-      "append": "",
       "center_lat": "46.88",
       "center_lng": "-110.36",
       "zoom": 6,
